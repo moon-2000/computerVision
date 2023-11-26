@@ -7,7 +7,8 @@ This project provides the step-by-step guide to gather the technical side of Com
 - Object Detection   
 - Object Tracking   
 - Deep Learning for Computer Vision   
+- YOLO models for Object detection   
 
 
-### NOTES:   
+### NOTES:      
 The script video_processing is to be run on Linux or MacOS
