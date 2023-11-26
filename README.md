@@ -1,4 +1,4 @@
-# computerVision   
+# The Way to Computer Vision    
 
 ## Description    
 This project provides the step-by-step guide to gather the technical side of Computer Vision including:   
