@@ -5,9 +5,25 @@ import cv2
 # To connect to the default camera
 cap = cv2.VideoCapture(0)
 
+"""
+    To read a saved video instead of connecting to the camera, 
+    just add the video_path where it's located in VideoCapture function
+"""
+
+# To save the captured video 
+fps = 20  # frame per second
+
 # To get the width and height of the captured frame
 width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
 height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+
+writer = cv2.VideoWriter('myNewVideo.mp4', cv2.VideoWriter_fourcc(*'XVID'), fps, (width, height)) 
+"""
+    This XVID / MPV4 are for MacOS or Linux
+    For Windows, use DIVX instead. 
+"""
+
+
 
 while True:
     ret, frame = cap.read()
@@ -16,6 +32,10 @@ while True:
     
     frame: The actual frame that is read from the video source. It is a NumPy array representing the image.
     """
+
+    # to save the frame read into myNewVideo
+    writer.write(frame)
+
 
     if not ret:
         print('Frame has not been read successfully!')
@@ -34,6 +54,9 @@ while True:
 
 # To stop capturing the video
 cap.release()
+
+# To stop saving frames
+writer.release()
 
 # After finishing reading the whole video 
 cv2.destroyAllWindows()
